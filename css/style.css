@@ -1,0 +1,150 @@
+
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.status {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.status.red-turn {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+}
+
+.status.black-turn {
+    color: #34495e;
+    background: rgba(52, 73, 94, 0.1);
+    border: 1px solid #34495e;
+}
+
+.timer {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.board {
+    width: min(450px, 100vw - 40px);
+    height: calc(min(450px, 100vw - 40px) * 10/9);
+    background: linear-gradient(135deg, #d6ba88 0%, #c9a66b 100%);
+    position: relative;
+    margin: 0 auto;
+    border: 3px solid #8b5a2b;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.river {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: calc(10% - 1px);
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8b5a2b;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.grid-line {
+    position: absolute;
+    background-color: #8b5a2b;
+    z-index: 1;
+}
+
+.horizontal {
+    width: calc(100% - 40px);
+    height: 1px;
+    left: 20px;
+}
+
+.vertical {
+    width: 1px;
+    height: 100%;
+    top: 0;
+}
+
+.move-hint {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 235, 59, 0.7);
+    z-index: 8;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #3498db;
+    color: white;
+}
+
+.thinking {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: none;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.win-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+}

@@ -1,0 +1,45 @@
+.piece {
+    position: absolute;
+    width: calc(100% / 9 - 8px);
+    height: calc(100% / 10 - 8px);
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(14px, 4vw, 20px);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.piece.red {
+    background: radial-gradient(circle, #ffffff 0%, #e74c3c 80%);
+    color: #c0392b;
+    border: 2px solid #c0392b;
+}
+
+.piece.black {
+    background: radial-gradient(circle, #ffffff 0%, #2c3e50 80%);
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+}
+
+.piece.selected {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
+    z-index: 20;
+}
+
+.piece:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.piece.captured {
+    animation: captureAnimation 0.5s ease-out forwards;
+}

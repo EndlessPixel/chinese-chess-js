@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>中国象棋 - 人机对战</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/piece.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/keyframes.css">
+    <link rel="stylesheet" href="css/default.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>中国象棋 - 人机对战</h1>
+        <div class="game-info">
+            <div class="status red-turn" id="status">红方回合（玩家）</div>
+            <div class="timer" id="timer">00:00</div>
+        </div>
+        <div class="board" id="board">
+            <div class="river">楚河 · 汉界</div>
+            <div class="move-hint" id="moveHint"></div>
+        </div>
+        <div class="controls">
+            <button class="btn-primary" onclick="resetGame()">重新开始</button>
+            <button class="btn-secondary" onclick="undoMove()">悔棋</button>
+            <button class="btn-secondary" onclick="showMoveHints()">显示可移动位置</button>
+        </div>
+    </div>
+    <div class="thinking" id="thinking">AI思考中...</div>
+    <div class="win-modal" id="winModal">
+        <div class="modal-content">
+            <h2 id="winMessage">红方获胜！</h2>
+            <div class="modal-buttons">
+                <button class="btn-primary" onclick="resetGame()">再来一局</button>
+                <button class="btn-secondary" onclick="closeWinModal()">关闭</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
